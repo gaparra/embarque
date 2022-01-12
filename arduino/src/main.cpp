@@ -8,6 +8,10 @@ void OffLed(){
 PORTB = PORTB &~(1<<5);
 }
 
+void toggle(){
+  PINB |= (1 << 5);
+}
+
 void ledSetup(){
   DDRB = DDRB | (1<<5);
 }
@@ -19,8 +23,6 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  OnLed();
-  delay(1000);
-  OffLed();
+  toggle();
   delay(1000);
 }
