@@ -31,8 +31,11 @@ ISR(TIMER1_COMPA_vect){
 void setup() {
   // put your setup code here, to run once:
   ledSetup();
-  timerSetup();
 }
 
 void loop() {
+  DDRB |= (1<<0);
+  delay(10);
+  DDRB &= ~(1<<0);
+  delay(10);
 }
